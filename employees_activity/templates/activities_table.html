@@ -1,0 +1,25 @@
+<h2>Employees activity for {{ organization }} on {{ date }}</h2>
+
+<table border="">
+    <tr>
+        <th></th>
+        {% for column in columns %}
+        <th>
+            {{ column }}
+        </th>
+        {% endfor %}
+    </tr>
+
+    {% for row in rows %}
+    <tr>
+        <td>
+            <b>{{ row }}</b>
+        </td>
+        {% for time in data[loop.index0] %}
+        <td align="center">
+            {{ time }}
+        </td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
